@@ -17,7 +17,7 @@
         "@angular-eslint/component-selector": [
           "error",
           { "type": "element", "prefix": "ngshop", "style": "kebab-case" }
-        ]
+        ],
       }
     },
     {
