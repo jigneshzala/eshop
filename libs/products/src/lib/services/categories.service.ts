@@ -5,7 +5,7 @@ import { Category } from '../models/category';
 import { environment } from '@env/environment';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class CategoriesService {
   apiURLCategories = environment.apiUrl + 'categories';
@@ -25,10 +25,7 @@ export class CategoriesService {
   }
 
   updateCategory(category: Category): Observable<Category> {
-    return this.http.put<Category>(
-      `${this.apiURLCategories}/${category.id}`,
-      category
-    );
+    return this.http.put<Category>(`${this.apiURLCategories}/${category.id}`, category);
   }
 
   deleteCategory(categoryId: string): Observable<any> {
