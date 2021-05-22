@@ -1,19 +1,18 @@
 import { Component, OnInit } from '@angular/core';
+import { CategoriesService, Category } from '@eshop-team/products';
 
 @Component({
   selector: 'admin-categories-list',
   templateUrl: './categories-list.component.html',
-  styles: [
-  ]
+  styles: [],
 })
 export class CategoriesListComponent implements OnInit {
-
-  categories = [
-    {id:1,name:'cate',icon:'icon'}
-  ];
-  constructor() { }
+  categories: Category[] = [];
+  constructor(private categoriesService: CategoriesService) {}
 
   ngOnInit(): void {
+    this.categoriesService.getCategories().subscribe((cats) => {
+      this.categories = cats;
+    });
   }
-
 }
