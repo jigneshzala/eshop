@@ -12,6 +12,8 @@ import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { CategoriesListComponent } from './pages/categories/categories-list/categories-list.component';
 import { CategoriesFormComponent } from './pages/categories/categories-form/categories-form.component';
 import { CategoriesService, ProductsService } from '@eshop-team/products';
+import { OrdersListComponent } from './pages/orders/orders-list/orders-list.component';
+import { OrdersDetailComponent } from './pages/orders/orders-detail/orders-detail.component';
 
 import { CardModule } from 'primeng/card';
 import { ToolbarModule } from 'primeng/toolbar';
@@ -26,8 +28,8 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { EditorModule } from 'primeng/editor';
 import { TagModule } from 'primeng/tag';
-import {InputMaskModule} from 'primeng/inputmask';
-
+import { InputMaskModule } from 'primeng/inputmask';
+import { FieldsetModule } from 'primeng/fieldset';
 
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
@@ -36,6 +38,7 @@ import { ProductsFormComponent } from './pages/products/products-form/products-f
 import { UsersListComponent } from './pages/users/users-list/users-list.component';
 import { UsersFormComponent } from './pages/users/users-form/users-form.component';
 import { UsersService } from '@eshop-team/users';
+
 
 const UX_MODULE = [
   CardModule,
@@ -52,7 +55,8 @@ const UX_MODULE = [
   DropdownModule,
   EditorModule,
   TagModule,
-  InputMaskModule
+  InputMaskModule,
+  FieldsetModule
 ];
 const routes: Routes = [
   {
@@ -99,6 +103,14 @@ const routes: Routes = [
         path: 'users/form/:id',
         component: UsersFormComponent,
       },
+      {
+        path: 'orders',
+        component: OrdersListComponent,
+      },
+      {
+        path: 'orders/:id',
+        component: OrdersDetailComponent,
+      },
     ],
   },
 ];
@@ -114,6 +126,8 @@ const routes: Routes = [
     ProductsFormComponent,
     UsersListComponent,
     UsersFormComponent,
+    OrdersListComponent,
+    OrdersDetailComponent,
   ],
   imports: [
     BrowserModule,
