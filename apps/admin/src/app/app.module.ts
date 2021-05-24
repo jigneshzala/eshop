@@ -25,11 +25,17 @@ import { DropdownModule } from 'primeng/dropdown';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { EditorModule } from 'primeng/editor';
+import { TagModule } from 'primeng/tag';
+import {InputMaskModule} from 'primeng/inputmask';
+
 
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ProductsListComponent } from './pages/products/products-list/products-list.component';
 import { ProductsFormComponent } from './pages/products/products-form/products-form.component';
+import { UsersListComponent } from './pages/users/users-list/users-list.component';
+import { UsersFormComponent } from './pages/users/users-form/users-form.component';
+import { UsersService } from '@eshop-team/users';
 
 const UX_MODULE = [
   CardModule,
@@ -45,6 +51,8 @@ const UX_MODULE = [
   InputSwitchModule,
   DropdownModule,
   EditorModule,
+  TagModule,
+  InputMaskModule
 ];
 const routes: Routes = [
   {
@@ -79,6 +87,18 @@ const routes: Routes = [
         path: 'products/form/:id',
         component: ProductsFormComponent,
       },
+      {
+        path: 'users',
+        component: UsersListComponent,
+      },
+      {
+        path: 'users/form',
+        component: UsersFormComponent,
+      },
+      {
+        path: 'users/form/:id',
+        component: UsersFormComponent,
+      },
     ],
   },
 ];
@@ -92,6 +112,8 @@ const routes: Routes = [
     CategoriesFormComponent,
     ProductsListComponent,
     ProductsFormComponent,
+    UsersListComponent,
+    UsersFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -105,6 +127,7 @@ const routes: Routes = [
   providers: [
     CategoriesService,
     ProductsService,
+    UsersService,
     MessageService,
     ConfirmationService,
   ],

@@ -143,7 +143,9 @@ export class ProductsFormComponent implements OnInit {
         }
       );
   }
-  onCancle() {}
+  onCancle() {
+    this.location.back();
+  }
 
   onImageUpload(event) {
     const file = event.target.files[0];
