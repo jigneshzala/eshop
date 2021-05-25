@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
@@ -37,8 +37,12 @@ import { ProductsListComponent } from './pages/products/products-list/products-l
 import { ProductsFormComponent } from './pages/products/products-form/products-form.component';
 import { UsersListComponent } from './pages/users/users-list/users-list.component';
 import { UsersFormComponent } from './pages/users/users-form/users-form.component';
-import { UsersService } from '@eshop-team/users';
-
+import {
+  AuthGuard,
+  JwtInterceptor,
+  UsersModule,
+  UsersService,
+} from '@eshop-team/users';
 
 const UX_MODULE = [
   CardModule,
@@ -56,12 +60,13 @@ const UX_MODULE = [
   EditorModule,
   TagModule,
   InputMaskModule,
-  FieldsetModule
+  FieldsetModule,
 ];
 const routes: Routes = [
   {
     path: '',
     component: ShellComponent,
+    canActivate: [AuthGuard],
     children: [
       {
         path: 'dashboard',
@@ -136,6 +141,7 @@ const routes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes, { initialNavigation: 'enabled' }),
+    UsersModule,
     ...UX_MODULE,
   ],
   providers: [
@@ -144,6 +150,7 @@ const routes: Routes = [
     UsersService,
     MessageService,
     ConfirmationService,
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
   ],
   bootstrap: [AppComponent],
 })
