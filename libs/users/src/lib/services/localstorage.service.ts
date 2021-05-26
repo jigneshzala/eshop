@@ -10,7 +10,7 @@ export class LocalstorageService {
     localStorage.setItem(TOKEN, data);
   }
 
-  getToken(): string {
+  getToken() {
     return localStorage.getItem(TOKEN);
   }
 

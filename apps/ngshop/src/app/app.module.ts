@@ -9,6 +9,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ProductsModule } from '@eshop-team/products';
 import { UiModule } from '@eshop-team/ui';
+import { OrdersModule } from '@eshop-team/orders';
 import { AccordionModule } from 'primeng/accordion';
 import { NavComponent } from './shared/nav/nav.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -35,6 +36,7 @@ const Routes: Routes = [
     UiModule,
     AccordionModule,
     ProductsModule,
+    OrdersModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
