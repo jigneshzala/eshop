@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "noImplicitAny": false,
     "strictPropertyInitialization" :false,
+    "strictNullChecks":false,
     "baseUrl": ".",
     "paths": {
       "@eshop-team/products": ["libs/products/src/index.ts"],
