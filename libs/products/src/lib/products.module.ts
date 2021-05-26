@@ -13,7 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { ProductPageComponent } from './pages/product-page/product-page.component';
 import { RatingModule } from 'primeng/rating';
 import {InputNumberModule} from 'primeng/inputnumber';
-
+import { UiModule } from '@eshop-team/ui';
 const routes: Routes = [
   {
     path: 'products',
@@ -37,7 +37,8 @@ const routes: Routes = [
     ButtonModule,
     CheckboxModule,
     RatingModule,
-    InputNumberModule
+    InputNumberModule,
+    UiModule
   ],
   declarations: [
     ProductsSearchComponent,
