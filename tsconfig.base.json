@@ -15,11 +15,11 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@eshop-team/ui": ["libs/ui/src/index.ts"],
       "@eshop-team/products": ["libs/products/src/index.ts"],
       "@eshop-team/users": ["libs/users/src/index.ts"],
       "@eshop-team/orders": ["libs/orders/src/index.ts"],
-      "@env/*": ["environments/*"]
+      "@env/*": ["environments/*"],
+      "@eshop-team/ui": ["libs/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

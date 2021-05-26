@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
@@ -9,9 +8,11 @@ import { ProductListComponent } from './pages/product-list/product-list.componen
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { RouterModule, Routes } from '@angular/router';
+import { ProductsModule } from '@eshop-team/products';
 import { UiModule } from '@eshop-team/ui';
 import { AccordionModule } from 'primeng/accordion';
 import { NavComponent } from './shared/nav/nav.component';
+import { HttpClientModule } from '@angular/common/http';
 
 const Routes: Routes = [
   {
@@ -36,8 +37,10 @@ const Routes: Routes = [
     BrowserModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(Routes),
+    HttpClientModule,
     UiModule,
     AccordionModule,
+    ProductsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
