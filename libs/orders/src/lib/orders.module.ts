@@ -13,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputMaskModule } from 'primeng/inputmask';
 import { DropdownModule } from 'primeng/dropdown';
+import { CartIconComponent } from './components/cart-icon/cart-icon.component';
 // import { ThankYouComponent } from './pages/thank-you/thank-you.component';
 const routes: Routes = [
   /* {
@@ -48,6 +49,11 @@ const routes: Routes = [
     OrderSummaryComponent,
     CheckoutPageComponent,
     ThankYouComponent */
+  
+    CartIconComponent
+  ],
+  exports: [
+    CartIconComponent
   ],
   // exports: [CartIconComponent, CartPageComponent, OrderSummaryComponent]
 })

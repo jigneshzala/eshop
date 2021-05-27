@@ -13,6 +13,9 @@ import { OrdersModule } from '@eshop-team/orders';
 import { AccordionModule } from 'primeng/accordion';
 import { NavComponent } from './shared/nav/nav.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MessagesComponent } from './shared/messages/messages.component';
+import { ToastModule } from 'primeng/toast';
+import { MessageService } from 'primeng/api';
 
 const Routes: Routes = [
   {
@@ -27,6 +30,7 @@ const Routes: Routes = [
     HeaderComponent,
     FooterComponent,
     NavComponent,
+    MessagesComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,8 +41,9 @@ const Routes: Routes = [
     AccordionModule,
     ProductsModule,
     OrdersModule,
+    ToastModule,
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
