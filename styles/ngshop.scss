@@ -4,7 +4,6 @@
 @import './base/fonts.scss';
 @import './base/mixins.scss';
 
-
 //Libraries
 @import '~primeicons/primeicons.css';
 @import '~primeng/resources/themes/saga-blue/theme.css';
@@ -23,10 +22,10 @@
 @import './apps/shop/shared/footer.scss';
 @import './apps/shop/shared/nav.scss';
 
-
 //Libs
 @import './libs/ui/ui.scss';
 @import './libs/products/products.scss';
+@import './libs/orders/orders.scss';
 
 .container {
   width: 1200px;
